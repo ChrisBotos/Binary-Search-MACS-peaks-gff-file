@@ -1,8 +1,3 @@
-# file='C:\\Users\\Chris Botos\\PycharmProjects\\pythonProject\\Galaxy1-[Peaxi162annotation_v4_filtered.gff].gff'
-# f=open(file)
-# x=filesizer(file)
-# t=peakfinder(f,'Peaxi162Scf00883',973127.5,0,3,4,'\t',x,5,5000,3000)
-
 import time
 
 start_time = time.time()
@@ -147,7 +142,6 @@ def finder(file_name,MACS2,file_position_turn,file_start_turn,file_end_turn,divi
                 n = extender(line, b1, b2, c, d)[0]
                 y = extender(line, b1, b2, c, d)[1]
                 while (line[a] != p):
-                    print('d', k)
                     k = k // 2
                     x = x - k
                     m = x
@@ -167,8 +161,9 @@ def finder(file_name,MACS2,file_position_turn,file_start_turn,file_end_turn,divi
             peak=float(line[cM])+(float(line[dM])-float(line[cM]))/2
             t=peakfinder(f,p,peak,a,c,d,divider,x,dig,b1,b2)
             r=r+[t[1]]
+            if str(h)[::-1][:3]=="000":
+                print(h)
             h=h+1
-            print(h)
     def cleanser(r):
         cl = []
         while ['Not aligned'] in r:
@@ -197,9 +192,8 @@ def finder(file_name,MACS2,file_position_turn,file_start_turn,file_end_turn,divi
     return(res)
 
 
-
-# o=finder('Galaxy1-[Peaxi162annotation_v4_filtered.gff].gff','MACS2Ypol.txt',0,3,4,'\t',0,1,2,'\t',5,5000,3000)
-# print(o)
+o=finder('Galaxy1-[Peaxi162annotation_v4_filtered.gff].gff','MACS2Ypol.txt',0,3,4,'\t',0,1,2,'\t',5,5000,3000)
+print(o)
 # The number in front of the gene shows the number of peaks found in it
 
 end_time = time.time()
