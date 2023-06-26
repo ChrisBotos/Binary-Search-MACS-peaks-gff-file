@@ -192,11 +192,10 @@ def finder(file_name,MACS2,file_position_turn,file_start_turn,file_end_turn,divi
     return(res)
 
 
-o=finder('Galaxy1-[Peaxi162annotation_v4_filtered.gff].gff','MACS2Ypol.txt',0,3,4,'\t',0,1,2,'\t',5,5000,3000)
-print(o)
+# Example: o=finder('Galaxy1-[Peaxi162annotation_v4_filtered.gff].gff','MACS2Ypol.txt',0,3,4,'\t',0,1,2,'\t',5,5000,3000)
+# print(o)
 # The number in front of the gene shows the number of peaks found in it
 
 end_time = time.time()
 total_time = end_time - start_time
 print("Total time taken: ", total_time, "seconds")
-
